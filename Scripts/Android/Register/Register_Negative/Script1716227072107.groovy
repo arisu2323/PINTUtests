@@ -22,18 +22,18 @@ Mobile.startApplication('C:\\Users\\Harris\\Desktop\\pintu\\PINTUtests\\Sample A
     true)
 Mobile.tap(findTestObject('Object Repository/Android/Register/TextView_no account yet create one'), 0)
 
-	// Empty fullname and verify
+	// Case 1: Empty fullname and verify
 	Mobile.tap(findTestObject('Android/Register/button_register'), 0)
 	String alert_fullname = Mobile.getText(findTestObject('Object Repository/Android/Register_Empty Field/alert_Enter Full Name'), 0)
 	Mobile.verifyEqual(alert_fullname, 'Enter Full Name')
 	
 	
-		// Input invalid email format
+		// Case 2: Input invalid email format
 		Mobile.setText(findTestObject('Android/Register/EditText_name'), 'asdasd', 0)
 		Mobile.hideKeyboard()
 		Mobile.setText(findTestObject('Android/Register/EditText_email'), 'asdasd6', 0)
 		
-	// Empty email and verify
+	// Case 3: Empty email and verify
 	Mobile.hideKeyboard()
 	Mobile.tap(findTestObject('Android/Register/button_register'), 0)
 	String alert_email_invalid = Mobile.getText(findTestObject('Object Repository/Android/Register_Empty Field/alert_Enter Valid Email'), 0)
@@ -41,21 +41,21 @@ Mobile.tap(findTestObject('Object Repository/Android/Register/TextView_no accoun
 	String alert_email = Mobile.getText(findTestObject('Object Repository/Android/Register_Empty Field/alert_Enter Valid Email'), 0)
 	Mobile.verifyEqual(alert_email, 'Enter Valid Email')
 	
-	// Empty password and verify
+	// Case 4: Empty password and verify
 	Mobile.setText(findTestObject('Android/Register/EditText_email'), 'asdasd6@yahoo.com', 0)
 	Mobile.hideKeyboard()
 	Mobile.tap(findTestObject('Android/Register/button_register'), 0)
 	String alert_password = Mobile.getText(findTestObject('Object Repository/Android/Register_Empty Field/alert_Enter Password'), 0)
 	Mobile.verifyEqual(alert_password, 'Enter Password')
 	
-	// Empty confirm password and verify
+	// Case 5: Empty confirm password and verify
 	Mobile.setText(findTestObject('Android/Register/EditText_password'), 'password', 0)
 	Mobile.hideKeyboard()
 	Mobile.tap(findTestObject('Android/Register/button_register'), 0)
 	String alert_confirmPassword = Mobile.getText(findTestObject('Object Repository/Android/Register_Empty Field/alert_Password Does Not Matches'), 0)
 	Mobile.verifyEqual(alert_confirmPassword, 'Password Does Not Matches')
 	
-		// Input password and confirm password that doesn't match
+		// Case 6: Input password and confirm password that doesn't match
 		Mobile.setText(findTestObject('Android/Register/EditText_password'), 'password', 0)
 		Mobile.setText(findTestObject('Android/Register/EditText_confirmPassword'), 'passwordpassword', 0)
 		String alert_confirmPasswordNotMatch = Mobile.getText(findTestObject('Object Repository/Android/Register_Empty Field/alert_Password Does Not Matches'), 0)

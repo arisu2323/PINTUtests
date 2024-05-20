@@ -18,9 +18,10 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 // Call register test case first so we can login with registered account
-WebUI.callTestCase(findTestCase('Android/Register/Register Success'), [:], FailureHandling.STOP_ON_FAILURE)
+Mobile.callTestCase(findTestCase('Android/Register/Register Success'), [:], FailureHandling.STOP_ON_FAILURE)
 
 // Use parameters for login
+//Mobile.startApplication(GlobalVariable.APK_PATH, true)
 Mobile.pressBack()
 Mobile.setText(findTestObject('Android/Login/EditText_email'), GlobalVariable.REGISTER_EMAIL, 0)
 Mobile.setText(findTestObject('Android/Login/EditText_password'), 'password123', 0)
@@ -29,7 +30,8 @@ Mobile.delay(1)
 
 // Take SS after success login
 Mobile.tap(findTestObject('Android/Login/button_login'), 0)
-Mobile.delay(3)
+
+Mobile.delay(2)
 Mobile.takeScreenshot()
 
 // Verify data after success login with registered account

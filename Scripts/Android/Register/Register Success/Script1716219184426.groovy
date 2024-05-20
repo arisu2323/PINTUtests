@@ -32,12 +32,12 @@ Mobile.delay(1)
 Mobile.setText(findTestObject('Object Repository/Android/Register/EditText_confirmPassword'), 'password123', 0)
 Mobile.hideKeyboard()
 Mobile.delay(1)
-
 Mobile.tap(findTestObject('Object Repository/Android/Register/button_register'), 0)
-
-// Take screenshot for registration successfull message since it cannot be inspected
-Mobile.delay(1)
-Mobile.takeScreenshot()
+	// Verify message registration successfull
+	String alert_regis_success = Mobile.getText(findTestObject('Android/Login/alert_regis_login'), 0)
+	Mobile.verifyEqual(alert_regis_success, 'Registration Successful')
+	Mobile.delay(1)
+	Mobile.takeScreenshot()
 //Mobile.closeApplication()
 
 // Set parameters as global variables for use in other test cases
