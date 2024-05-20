@@ -21,9 +21,25 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('Android/Register/Register Success'), [:], FailureHandling.STOP_ON_FAILURE)
 
 // Use parameters for login
-Mobile.startApplication(GlobalVariable.APK_PATH, true)
-Mobile.setText(findTestObject('Object Repository/Android/Login/EditText_username'), GlobalVariable.REGISTER_NAME, 0)
-Mobile.setText(findTestObject('Object Repository/Android/Login/EditText_password'), GlobalVariable.REGISTER_EMAIL, 0)
-Mobile.tap(findTestObject('Object Repository/Android/Login/button_login'), 0)
+Mobile.pressBack()
+Mobile.setText(findTestObject('Android/Login/EditText_email'), GlobalVariable.REGISTER_EMAIL, 0)
+Mobile.setText(findTestObject('Android/Login/EditText_password'), 'password123', 0)
+Mobile.hideKeyboard()
+Mobile.delay(1)
+
+// Take SS after success login
+Mobile.tap(findTestObject('Android/Login/button_login'), 0)
+Mobile.delay(3)
+Mobile.takeScreenshot()
+
+// Verify data after success login with registered account
+String verify_name = Mobile.getText(findTestObject('Android/Login/verify_name'), 0)
+Mobile.verifyEqual(verify_name, GlobalVariable.REGISTER_NAME.toString())
+
+String verify_email = Mobile.getText(findTestObject('Android/Login/verify_email'), 0)
+Mobile.verifyEqual(verify_email, GlobalVariable.REGISTER_EMAIL.toString())
+
+String verify_password = Mobile.getText(findTestObject('Android/Login/verify_password'), 0)
+Mobile.verifyEqual(verify_password, 'password123')
 
 Mobile.closeApplication()

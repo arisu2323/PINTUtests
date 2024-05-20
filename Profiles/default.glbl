@@ -19,4 +19,9 @@
       <initValue>''</initValue>
       <name>REGISTER_EMAIL</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>REGISTER_PASSWORD</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

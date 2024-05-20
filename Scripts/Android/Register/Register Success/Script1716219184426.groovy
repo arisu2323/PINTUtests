@@ -18,9 +18,9 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 // Generate random number
-def randomNumber = new Random().nextInt(100000)
+def randomNumber = new Random().nextInt(10000)
 def name = 'harris' + randomNumber
-def email = 'harris'+randomNumber+'@gmail.com'
+def email = 'harris'+randomNumber+'@yahoo.com'
 
 // Perform Registration steps
 Mobile.startApplication(GlobalVariable.APK_PATH, true)
@@ -28,9 +28,17 @@ Mobile.tap(findTestObject('Object Repository/Android/Register/TextView_no accoun
 Mobile.setText(findTestObject('Object Repository/Android/Register/EditText_name'), name, 0)
 Mobile.setText(findTestObject('Object Repository/Android/Register/EditText_email'), email, 0)
 Mobile.setText(findTestObject('Object Repository/Android/Register/EditText_password'), 'password123', 0)
+Mobile.delay(1)
 Mobile.setText(findTestObject('Object Repository/Android/Register/EditText_confirmPassword'), 'password123', 0)
+Mobile.hideKeyboard()
+Mobile.delay(1)
+
 Mobile.tap(findTestObject('Object Repository/Android/Register/button_register'), 0)
-Mobile.closeApplication()
+
+// Take screenshot for registration successfull message since it cannot be inspected
+Mobile.delay(1)
+Mobile.takeScreenshot()
+//Mobile.closeApplication()
 
 // Set parameters as global variables for use in other test cases
 GlobalVariable.REGISTER_NAME = name
