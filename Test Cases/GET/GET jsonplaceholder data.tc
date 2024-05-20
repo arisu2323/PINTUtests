@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>GET jsonplaceholder data</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3e48d8f4-9db2-4c77-89e1-81845fd15534</testCaseGuid>
+</TestCaseEntity>
