@@ -4,4 +4,19 @@
    <name>default</name>
    <tag></tag>
    <defaultProfile>true</defaultProfile>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'C:/Users/Harris/Desktop/pintu/PINTUtests/Sample Android App - Login Tes_4.0_APKPure.apk'</initValue>
+      <name>APK_PATH</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>REGISTER_NAME</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>REGISTER_EMAIL</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

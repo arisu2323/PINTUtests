@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>POST jsonplaceholder</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>116eede7-765f-4b00-bfbb-d41374d1692e</testCaseGuid>
+</TestCaseEntity>
